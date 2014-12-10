@@ -16,7 +16,7 @@ import java.util.Arrays;
  */
 public class Senha {
     
-    private byte[] senha;
+    private byte[] senhaCriptografada;
 
     public Senha(String senha) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         setSenha(senha);
@@ -27,11 +27,11 @@ public class Senha {
     
 
     public byte[] getSenha() {
-        return senha;
+        return senhaCriptografada;
     }
 
     public void setSenha(String senha) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        this.senha = Criptografar(senha);
+        this.senhaCriptografada = Criptografar(senha);
     }
     
     public static byte[] Criptografar(String senha) throws NoSuchAlgorithmException, UnsupportedEncodingException{

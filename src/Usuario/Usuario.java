@@ -20,34 +20,22 @@ public class Usuario implements Autenticavel{
     protected String nome;
     protected String endereco;
     protected int idade;
-    private String nomeUsuario;
-    private Senha senha;
     
-    public Usuario() throws NoSuchAlgorithmException, UnsupportedEncodingException {
+    
+    public Usuario(){
         this.nome = "Sem Nome";
         this.endereco = "Sem Endereço";
         this.idade = 0;
-        this.nomeUsuario = "Sem Nome";
-        this.senha = new Senha();
     }
     
-    public Usuario(String nome, String endereco, int idade, String nomeUsuario, String senha) {
+    public Usuario(String nome, String endereco, int idade){
         setNome(nome);
         setEndereco(endereco);
         setIdade(idade);
-        setNomeUsuario(nomeUsuario);
-        setsenha(nome);
+        
     }
 
-    public String getNomeUsuario() {
-        return nomeUsuario;
-    }
-
-    public void setNomeUsuario(String nomeUsuario) {
-        if(nomeUsuario.length() <= 15){
-            this.nomeUsuario = nomeUsuario;
-        }
-    }
+    
 
     public String getNome() {
         return nome;
@@ -89,7 +77,7 @@ public class Usuario implements Autenticavel{
     }
 
 
-    public static Usuario novoUser(){
+    public static Usuario novoUser() throws NoSuchAlgorithmException, UnsupportedEncodingException{
         Scanner sc = new Scanner(System.in);
         String nome1;
         String endereco1;
@@ -109,7 +97,7 @@ public class Usuario implements Autenticavel{
         System.out.println("Digite sua Senha");
         senha1 = sc.next();
         
-        return new Usuario(nome1, endereco1, idade1, nomeUser1, senha1);     
+        return new Usuario(nome1, endereco1, idade1);     
     }
     
     @Override
