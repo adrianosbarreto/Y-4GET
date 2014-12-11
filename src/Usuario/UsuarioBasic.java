@@ -6,7 +6,9 @@
 package Usuario;
 
 import Arquivos.Arquivo;
+import Interfaces.Autenticavel;
 import Login.Senha;
+import Notas.Nota;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -15,12 +17,12 @@ import java.util.ArrayList;
  *
  * @author Adriano
  */
-public class UsuarioBasic extends Usuario{
+public class UsuarioBasic extends Usuario implements Autenticavel{
     
     private final static int NUM_MAX_NOTAS = 4;
     private String nomeUsuario;
     private Senha senha;
-    private ArrayList<Arquivo> notas = new ArrayList<>();
+    private ArrayList<Nota> notas = new ArrayList<>();
 
     public UsuarioBasic(String nomeUsuario, Senha senha) {
         this.nomeUsuario = nomeUsuario;
@@ -32,7 +34,13 @@ public class UsuarioBasic extends Usuario{
         setNomeUsuario(nomeUsuario);
         this.senha = new Senha(senha);
     }
- 
+
+    @Override
+    public boolean autenticar(ArrayList<Autenticavel> vetor) {
+        return super.autenticar(vetor); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
     public String getNomeUsuario() {
         return nomeUsuario;

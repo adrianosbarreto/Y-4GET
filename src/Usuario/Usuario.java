@@ -5,6 +5,7 @@
  */
 package Usuario;
 
+import Interfaces.Autenticavel;
 import Login.Senha;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;

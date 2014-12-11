@@ -5,6 +5,7 @@
  */
 package Login;
 
+import Interfaces.Criptografavel;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -15,7 +16,7 @@ import java.util.Scanner;
  *
  * @author Adriano
  */
-public class Senha {
+public class Senha implements Criptografavel{
     
     private byte[] senhaCriptografada;
 
@@ -35,9 +36,10 @@ public class Senha {
         this.senhaCriptografada = Criptografar(senha);
     }
     
-    public static byte[] Criptografar(String senha) throws NoSuchAlgorithmException, UnsupportedEncodingException{
+    @Override
+    public byte[] Criptografar(String texto) throws NoSuchAlgorithmException, UnsupportedEncodingException{
         MessageDigest algoritmo = MessageDigest.getInstance("MD5");
-        byte senhaCripto[] = algoritmo.digest(senha.getBytes("UTF-8"));
+        byte senhaCripto[] = algoritmo.digest(texto.getBytes("UTF-8"));
         
         //System.out.println(Arrays.toString(senhaCripto));
         return senhaCripto;

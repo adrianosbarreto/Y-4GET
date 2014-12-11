@@ -64,18 +64,19 @@ public class Aniversario extends Lembrete implements Despertar, Serializable{
  
         Date time = this.despertar.getTime();
         
+        if(new Date().compareTo(time) < 0){
+            TimerTask k;
+            k = new TimerTask(){
+                @Override
+                public void run() {
+                    JOptionPane.showMessageDialog(null, dataFormatada.format(new Date()) +" "+ texto1 , "Despertador", 1);
+
+                    tempo.cancel();
+                }
+            };
+            tempo.schedule(k, time);
+        }
         
-        TimerTask k;
-        k = new TimerTask(){
-            @Override
-            public void run() {
-                JOptionPane.showMessageDialog(null, dataFormatada.format(new Date()) +" "+ texto1 , "Despertador", 1);
-                
-                tempo.cancel();
-            }
-        };
-        tempo.schedule(k, time);
-   
         
     }
     public static Calendar criarDataAniversario(){

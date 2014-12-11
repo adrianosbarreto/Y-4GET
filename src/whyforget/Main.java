@@ -8,6 +8,7 @@ package whyforget;
 import Arquivos.Texto;
 import Login.Senha;
 import Notas.Agendamentos;
+import Notas.Aniversario;
 import Notas.Despertador;
 import Notas.Lembrete;
 import java.io.UnsupportedEncodingException;
@@ -52,7 +53,7 @@ public class Main {
 //        despertador1.criarDespertador();
 //        
         //Texto texto = new Texto();
-        Lembrete lembrete = new Lembrete(Lembrete.criarData(),"Novo Despertador" );
+        Aniversario lembrete = new Aniversario("Aniversaio Mamae", Aniversario.criarDataAniversario(), "Parabens Mamae");
         lembrete.despertar();
         System.out.println(lembrete);
     }
