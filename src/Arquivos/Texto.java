@@ -6,6 +6,7 @@
 package Arquivos;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -14,18 +15,42 @@ import java.util.Scanner;
  */
 public class Texto extends Arquivo implements Serializable{
     //String nome;
+    String texto;
     int numeroLinhas;
 
-    public Texto(String nome, int numeroLinhas, double tamanho, String extensao) {
+    public Texto(String texto,String nome, int numeroLinhas, double tamanho, String extensao) {
         super(tamanho, extensao, nome);
         setNumeroLinhas(numeroLinhas);
+        setTexto(texto);
+        this.dataCriacao = new Date();
         //setTamanho(tamanho);
     }
 
     public Texto() {
         super(0, "txt", "Sem Titulo");
         this.numeroLinhas = 0;
+        this.texto = "Texto Incompleto";
+        this.dataCriacao = new Date();
     }
+
+    public String getTexto() {
+        return texto;
+    }
+
+    public void setTexto(String texto) {
+        if(texto.length() <= 5000){
+            this.texto = texto;
+        }
+        else{
+            this.texto = "Texto Incompleto";
+        }
+    }
+
+    public Date getDataCriacao() {
+        return dataCriacao;
+    }
+    
+    
 
     public void setTitulo(String titulo) {
         if(titulo.length() <= 30){

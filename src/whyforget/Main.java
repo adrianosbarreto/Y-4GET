@@ -5,10 +5,18 @@
  */
 package whyforget;
 
+import Arquivos.Texto;
 import Login.Senha;
+import Notas.Agendamentos;
+import Notas.Despertador;
+import Notas.Lembrete;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 
 
@@ -27,22 +35,26 @@ public class Main {
      */
     
     public static void main(String[] args) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        Scanner sc = new Scanner(System.in);
-        Senha senha1 = new Senha("admin");
-    
-        String nova;
+        Date data = new Date();
+        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        System.out.println(formatoData.format(data));
+        Calendar date = Calendar.getInstance();
+        date.set(Calendar.MINUTE, 15);
         
-        System.out.println("Digite senha");
-        nova = sc.next();
+        //Despertador despertador = new Despertador(date, "Acordar");
         
-        byte[] novo  = Senha.Criptografar(nova);
+        //Despertador c ;
+        //c.criarDespertador();
+        //Despertador despertador = new Despertador(c, "Acordar");
         
-        if(Arrays.equals(novo, senha1.getSenha())){
-            System.out.println("Usuario Autenticado");
-        }
-        else{
-            System.out.println("Nao autenticado");
-        }
+        //Calendar d = ;
+//        Despertador despertador1 = new Despertador();
+//        despertador1.criarDespertador();
+//        
+        //Texto texto = new Texto();
+        Lembrete lembrete = new Lembrete(Lembrete.criarData(),"Novo Despertador" );
+        lembrete.despertar();
+        System.out.println(lembrete);
     }
 }
     

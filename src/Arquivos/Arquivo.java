@@ -83,7 +83,7 @@ public abstract class Arquivo implements Serializable{
 
     @Override
     public String toString() {
-        SimpleDateFormat forma = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        SimpleDateFormat forma = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         String s =  this.nome + "." + this.extensao +
                     "\nData Criacao: " + forma.format(dataCriacao) +
                     "\nTamanho: " + this.tamanho + "\n";

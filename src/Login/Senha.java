@@ -9,6 +9,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  *
@@ -41,4 +42,21 @@ public class Senha {
         //System.out.println(Arrays.toString(senhaCripto));
         return senhaCripto;
     }
+    
+//    Scanner sc = new Scanner(System.in);
+//        Senha senha1 = new Senha("admin");
+//    
+//        String nova;
+//        
+//        System.out.println("Digite senha");
+//        nova = sc.next();
+//        
+//        byte[] novo  = Senha.Criptografar(nova);
+//        
+//        if(Arrays.equals(novo, senha1.getSenha())){
+//            System.out.println("Usuario Autenticado");
+//        }
+//        else{
+//            System.out.println("Nao autenticado");
+//        };
 }

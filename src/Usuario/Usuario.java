@@ -35,8 +35,6 @@ public class Usuario implements Autenticavel{
         
     }
 
-    
-
     public String getNome() {
         return nome;
     }
@@ -103,8 +101,8 @@ public class Usuario implements Autenticavel{
     @Override
     public String toString() {
         
-        String novo =   super.toString() + "\nNome Usuario: " + this.nomeUsuario;
-        
+        String novo =   super.toString() + "\nNome: " + this.nome;
+
         return novo;
     }
    
@@ -117,7 +115,7 @@ public class Usuario implements Autenticavel{
         } 
         return false;
     }
-
+/*
     @Override
     public boolean equals(Object objeto) {
 
@@ -131,7 +129,7 @@ public class Usuario implements Autenticavel{
             return false;
         }
     }
-/*
+
     @Override
     public void editar() {
     Scanner sc = new Scanner(System.in);
